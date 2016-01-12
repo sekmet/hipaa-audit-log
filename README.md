@@ -10,90 +10,32 @@ HIPAA logging and audit features for Meteor Apps built with Clinical UI.
 ====================================================
 #### Installation
 
+The HIPAA audit log is now split into two packages:  one for the logging, and one for the UI.  Please see [``clinical:hipaa-logger``](https://github.com/clinical-meteor/hipaa-logger) for the logging portion.  
+
 ````
 meteor add clinical:hipaa-audit-log
 meteor add clinical:hipaa-logger
 ````
 
-
 ====================================================
-#### Collections
+#### URL Routes
 
-At installation, a Mongo collection is created named 'Hipaa', which users can find and insert into, but cannot update or remove records from.  This makes it an audit log that people can refer to later to find out what clinically relevant privacy events have occurred.
-
-
-====================================================
-#### API Requirements
-
-This package depends on the ``acounts-base`` package, and generally relies on the user profile having a ``fullName`` field. If you don't have a field that stores the entire user's name, it's recommended that you create one; or at least create a helper function that will generate it.
+Navigate to the audit log via the default route:
 
 ````js
-Meteor.user().profile.fullName
+Router.go('/audit');
 ````
 
 ====================================================
-#### EventType API
+#### Provided Templates
 
-The following event types are provided by the Hipaa Audit Log package.
+Three templates are provided by this package:
 
+````html
+{{>hipaaAuditLog}}
+{{>hipaaRibbon}}
+{{>hipaaLogPage}}
 ````
-init
-access
-create
-modify
-clone
-delete
-denied
-viewed
-publish
-unpublish
-````
-
-====================================================
-#### Core API - Methods
-
-````js
-HipaaLogger.logEvent(eventType, userId, userName, collectionName, recordId, patientId, patientName, message);
-
-var hipaaEvent = {
-  eventType: "modify",
-  userId: Meteor.userId(),
-  userName: Meteor.user().profile.fullName,
-  collectionName: "Medications",
-  recordId: Random.id(),
-  patientId: Session.get('currentPatientId'),
-  patientName: Session.get('currentPatientName')
-};
-HipaaLogger.logEvent(hipaaEvent);
-````
-
-
-
-====================================================
-#### Code Sample
-
-In typical situations, HIPAA events will occur as parts of other functions, usually related to adding, viewing, or removing data.
-
-````js
-Template.samplePage.events({
-  'click #saveButton': function (evt, tmpl) {
-    var self = this;
-
-    Vitals.update({_id: this._id},{$set:{
-      stared: true
-    }}, function(error, result){
-      if(error){
-        HipaaLogger.logEvent("error", Meteor.userId(), Meteor.user().profile.fullName, "Vitals", null, null, null, error);
-      }
-      if(result){
-        HipaaLogger.logEvent("create", Meteor.userId(), Meteor.user().profile.fullName, "Vitals", null, null, null, null);
-      }
-    });
-  }
-});
-````
-
-
 
 ====================================================
 #### Styling and Classes
@@ -123,7 +65,6 @@ hipaaLogEntryContains(rowIndex, hipaaEvent)
 // actions
 logHipaaEvent(hipaaEvent, timeout)
 ````
-
 
 
 ------------------------
