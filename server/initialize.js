@@ -1,5 +1,6 @@
 Meteor.methods({
-  initalizeDemoLog:function (){
+  initializeDemoLog:function (){
+      console.log('initializeDemoLog');
 
       // hipaaEvent, userId, userName, collectionName, recordId, patientId, patientName, message
       HipaaLogger.logEvent("init", Meteor.userId(), "Ada Lovelace");
@@ -21,6 +22,5 @@ Meteor.methods({
       HipaaLogger.logEvent("delete", Meteor.userId(), "Ada Lovelace", "MedicationPlans", Random.id(), Random.id(), "John Doe");
       HipaaLogger.logEvent("viewed", Meteor.userId(), "Florence Nightingale", "Vitals", Random.id(), Random.id(), "John Doe");
       HipaaLogger.logEvent("create", Meteor.userId(), "Florence Nightingale", "Vitals", Random.id(), Random.id(), "John Doe");
-
   }
 });
