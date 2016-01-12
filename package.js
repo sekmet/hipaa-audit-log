@@ -50,10 +50,11 @@ Package.onTest(function (api) {
   api.use('iron:router@1.0.4', 'client');
   api.use('mrt:moment@2.8.1', 'client');
   api.use('grove:less@0.1.1', 'client');
-  api.use('clinical:fonts@1.0.0', 'client');
-  api.use('clinical:hipaa-audit-log');
-  api.use('clinical:hipaa-logger@1.0.0', 'client');
+
   api.use('clinical:verification');
+  api.use('clinical:fonts@1.0.0');
+  api.use('clinical:hipaa-audit-log');
+  api.use('clinical:hipaa-logger@1.0.0');
 
   api.addFiles('tests/tinytest/audit-log-tests.js');
 });

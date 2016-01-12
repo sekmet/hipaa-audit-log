@@ -40,7 +40,7 @@ describe('clinical:hipaa-audit-log', function () {
         patientId: "123",
         patientName: "abc"
       });
-      return Hipaa.findOne();
+      return HipaaLog.findOne();
     }).then(function (eventRecord){
       server.wait(500, "", function (){
         expect(eventRecord).to.exist;
@@ -61,7 +61,7 @@ describe('clinical:hipaa-audit-log', function () {
         patientName: "abc"
       });
 
-      var eventRecord = Hipaa.findOne();
+      var eventRecord = HipaaLog.findOne();
 
       expect(eventRecord).to.exist;
       expect(eventRecord.userId).to.equal("janedoe");
