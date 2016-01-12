@@ -6,24 +6,25 @@ Package.describe({
 });
 
 Package.on_use(function (api) {
-  api.versionsFrom('1.1.0.2');
+  api.versionsFrom('1.1.0.3');
 
-  api.use('meteor-platform@1.2.2');
-  api.use('clinical:router@2.0.17');
+  api.use('meteor-platform');
 
   api.use('mrt:moment@2.8.1', 'client');
   api.use('grove:less@0.1.1', 'client');
-  api.use('fortawesome:fontawesome@4.4.0', 'client');
+  // api.use('fortawesome:fontawesome@4.4.0', 'client');
 
+  api.use('clinical:router@2.0.17');
+  api.use('clinical:fonts@1.0.0', 'client');
   api.use('clinical:auto-resizing@0.1.2', 'client');
+  api.use('clinical:hipaa-logger@1.0.0');
 
+  api.imply('clinical:hipaa-logger');
 
-  api.addFiles('lib/HipaaLogger.js', ["client", "server"]);
-  api.addFiles('lib/HipaaAuditLog.js', ["client", "server"]);
+  api.addFiles('lib/HipaaAuditLog.js');
+  // api.addFiles('lib/HipaaLog.js');
 
-  api.addFiles('hipaa.shared.js', ["client", "server"]);
-
-  api.addFiles('hipaa.server.js', "server");
+  api.addFiles('server/publication.js', "server");
 
   api.addFiles('components/hipaaRibbon/hipaaRibbon.html', "client");
   api.addFiles('components/hipaaRibbon/hipaaRibbon.js', "client");
@@ -37,11 +38,6 @@ Package.on_use(function (api) {
   api.addFiles('components/hipaaLogPage/hipaaLogPage.js', "client");
   api.addFiles('components/hipaaLogPage/hipaaLogPage.less', "client");
 
-  api.export('hipaaLog');
-  api.export('hipaaRibbon');
-
-  api.export('Hipaa');
-  api.export('HipaaLogger');
   api.export('HipaaAuditLog');
 });
 
@@ -50,12 +46,13 @@ Package.on_use(function (api) {
 Package.onTest(function (api) {
   api.use('tinytest');
 
-  api.use('meteor-platform@1.2.2');
+  api.use('meteor-platform');
   api.use('iron:router@1.0.4', 'client');
   api.use('mrt:moment@2.8.1', 'client');
   api.use('grove:less@0.1.1', 'client');
-  api.use('fortawesome:fontawesome@4.4.0', 'client');
+  api.use('clinical:fonts@1.0.0', 'client');
   api.use('clinical:hipaa-audit-log');
+  api.use('clinical:hipaa-logger@1.0.0', 'client');
   api.use('clinical:verification');
 
   api.addFiles('tests/tinytest/audit-log-tests.js');

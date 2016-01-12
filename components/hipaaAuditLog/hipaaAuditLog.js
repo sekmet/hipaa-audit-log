@@ -8,7 +8,7 @@ Session.setDefault("beginDateFilter", new Date(moment().subtract(7, "days")).toI
 Session.setDefault("endDateFilter", new Date(moment().add(1, "days")).toISOString());
 
 
-Meteor.subscribe('hipaa');
+
 
 Template.hipaaAuditLog.onRendered(function () {
   Session.set("ribbonWidth", $('#hipaaRibbon').width());
@@ -19,7 +19,8 @@ Template.hipaaAuditLog.helpers({
     return Session.get('hipaaSearchFilter');
   },
   hipaaAudit: function () {
-    return Hipaa.find({
+    // return HipaaLog.find();
+    return HipaaLog.find({
       $or: [
         {
           userName: {

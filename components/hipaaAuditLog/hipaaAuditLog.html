@@ -29,7 +29,7 @@
         <i class="pull-left fa fa-database fa-2x lightgray"></i>
         <div class="media-body">
           <span class="small gray">{{entryTimestamp}}</span><br>
-          <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> accessed record(s) <span class="recordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection.
+          <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> accessed record(s) <span class="mongoRecordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection.
         </div>
       </div>
     </li>
@@ -43,9 +43,9 @@
         <div class="media-body">
           <span class="small gray">{{entryTimestamp}}</span><br>
           {{#if hasPatientInfo}}
-            <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> created record <span class="recordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection, regarding patient <span class="patientName" style="{{getHighlightColor}}">{{getPatientName}}</span>.
+            <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> created record <span class="mongoRecordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection, regarding patient <span class="patientName" style="{{getHighlightColor}}">{{getPatientName}}</span>.
           {{else}}
-            <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> created record <span class="recordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection.
+            <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> created record <span class="mongoRecordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection.
           {{/if}}
         </div>
       </div>
@@ -60,9 +60,9 @@
         <div class="media-body">
           <span class="small gray">{{entryTimestamp}}</span><br>
           {{#if hasPatientInfo}}
-            <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> modified record <span class="recordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection, regarding patient <span class="patientName {{getHighlightColor}}">{{getPatientName}}</span>.
+            <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> modified record <span class="mongoRecordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection, regarding patient <span class="patientName {{getHighlightColor}}">{{getPatientName}}</span>.
           {{else}}
-            <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> modified record <span class="recordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection.
+            <span class="userName" style="{{getHighlightColor}}">{{userName}}</span> modified record <span class="mongoRecordId" style="{{getHighlightColor}}">{{getRecordId}}</span> in the <span class="collectionName" style="{{getHighlightColor}}">{{getCollectionName}}</span> collection.
           {{/if}}
 
         </div>

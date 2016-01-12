@@ -12,6 +12,7 @@ HIPAA logging and audit features for Meteor Apps built with Clinical UI.
 
 ````
 meteor add clinical:hipaa-audit-log
+meteor add clinical:hipaa-logger
 ````
 
 
@@ -55,7 +56,7 @@ unpublish
 HipaaLogger.logEvent(eventType, userId, userName, collectionName, recordId, patientId, patientName, message);
 
 var hipaaEvent = {
-  eventType: "modified",
+  eventType: "modify",
   userId: Meteor.userId(),
   userName: Meteor.user().profile.fullName,
   collectionName: "Medications",
@@ -128,4 +129,4 @@ logHipaaEvent(hipaaEvent, timeout)
 ------------------------
 ### License
 
-MIT License. Use as you wish.  Disrupt the system.  It needs all the help it can get.
+![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)

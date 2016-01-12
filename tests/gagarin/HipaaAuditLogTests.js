@@ -29,7 +29,7 @@ describe('clinical:hipaa-audit-log', function () {
   });
 
 
-  it("Hipaa.Logger can log events on the client", function () {
+  it("HipaaLogger can log events on the client", function () {
     return client.execute(function () {
       HipaaLogger.logEvent({
         eventType: "modified",
@@ -49,7 +49,7 @@ describe('clinical:hipaa-audit-log', function () {
       });
     });
   });
-  it("Hipaa.Logger can log events on the server", function () {
+  it("HipaaLogger can log events on the server", function () {
     return server.execute(function () {
       HipaaLogger.logEvent({
         eventType: "modified",

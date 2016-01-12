@@ -5,14 +5,7 @@ Router.route("/audit", {
   template:"hipaaLogPage"
 });
 
-Template.hipaaLogPage.helpers({
-  rendered: function (){
 
-  }
-});
+Template.hipaaLogPage.helpers({});
 
-Template.hipaaLogPage.events({
-  "click #elementId": function (event, template){
-
-  }
-});
+Template.hipaaLogPage.events({});
