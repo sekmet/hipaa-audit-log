@@ -64,8 +64,12 @@ hipaaLogEntryContains(rowIndex, hipaaEvent)
 logHipaaEvent(hipaaEvent, timeout)
 ````
 
+===========================
+#### Contributors  
 
-------------------------
+This package was made possible through generous support from [Artaic Health](http://artaichealth.com/) and their NIH Small Business Innovation Research Grant.
+
+====================================================
 ### License
 
 ![MIT License](https://img.shields.io/badge/license-MIT-blue.svg)
