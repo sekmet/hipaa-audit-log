@@ -15,7 +15,7 @@ Package.on_use(function (api) {
 
   api.use('clinical:router@2.0.17');
   api.use('clinical:fonts@1.0.0', 'client');
-  api.use('clinical:auto-resizing@0.1.2', 'client');
+  api.use('clinical:auto-resizing@0.1.0', 'client');
   api.use('clinical:hipaa-logger@1.0.0');
 
   api.imply('clinical:hipaa-logger');
