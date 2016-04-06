@@ -8,18 +8,12 @@ Template.hipaaRibbon.events({
   "change #endDateInput": function (event, template) {
     Session.set("endDateFilter", $('#endDateInput').val() + "T00:00:00.000Z");
   },
-
-  'click #filterCreatedButton': function () {
-    Session.set("hipaaTypeFilter", 'create');
+  'change #actionFilter': function(e) {
+    var actionType = e.currentTarget.value;
+    Session.set("hipaaTypeFilter", actionType);
   },
-  'click #filterModifiedButton': function () {
-    Session.set("hipaaTypeFilter", 'modify');
-  },
-  'click #filterViewedButton': function () {
-    Session.set("hipaaTypeFilter", 'viewed');
-  },
-  'click #filterAllButton': function () {
-    Session.set("hipaaTypeFilter", '');
+  'click #searchClear': function() {
+    Session.set("hipaaSearchFilter", '');
   }
 });
 
