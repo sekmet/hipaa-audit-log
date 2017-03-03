@@ -1,8 +1,8 @@
 Package.describe({
   summary: "HIPAA audit log for ClinicalFramework.",
-  version: "2.4.3",
-  git: "http://github.com/clinical-meteor/hipaa-audit-log.git",
-  name: "clinical:hipaa-audit-log"
+  version: "1.0.0",
+  git: "http://github.com/sekmet/hipaa-audit-log.git",
+  name: "pharma:hipaa-audit-log"
 });
 
 Package.on_use(function (api) {
@@ -18,7 +18,7 @@ Package.on_use(function (api) {
   api.use('clinical:auto-resizing@0.1.0', 'client');
   api.use('clinical:hipaa-logger@1.0.0');
 
-  api.imply('clinical:hipaa-logger');
+  api.imply('pharma:hipaa-logger');
 
   api.addFiles('lib/HipaaAuditLog.js');
 
